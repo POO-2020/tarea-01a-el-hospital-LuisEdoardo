@@ -1,5 +1,6 @@
 import Nombres from "./nombres.js"
 import Fecha from "./fecha.js"
+import Tiempo from "./tiempo.js"
 class Hospital{
     constructor(dia,mes,año){
         this.fecha = new Date(año,mes -1,dia)
@@ -14,6 +15,10 @@ probarNombres(){
     console.log(nombres.getApellidoNombre())
     console.log(nombres.getIniciales())
 
+}
+probarTiempo(){
+    tiempo = new Tiempo(hora, minutos, periodo)
+    console.log(tiempo.getFormato24())
 }
     
 }
