@@ -6,13 +6,13 @@ export default class Nombres{
     }
 
 getNombreCompleto(){
-    return `${this.nombre()}/${this.apellidoP()}/${this.apellidoM()}`
+    return `${this.nombre} ${this.apellidoP} ${this.apellidoM}`
 }
 getApellidoNombre(){
-    return `${this.apellidoP()}/${this.apellidoM()}/${this.nombre()}`
+    return `${this.apellidoP} ${this.apellidoM} ${this.nombre}`
 }
 
 getIniciales(){
-    return `${this.nombre.charAt(0)}/${this.apellidoP.charAt(0)}/${this.apellidoM.charAt(0)}`
+    return `${this.nombre.charAt(0)} ${this.apellidoP.charAt(0)} ${this.apellidoM.charAt(0)}`
 }
 }
