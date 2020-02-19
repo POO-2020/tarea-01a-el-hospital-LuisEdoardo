@@ -20,6 +20,11 @@ probarTiempo(){
     tiempo = new Tiempo(hora, minutos, periodo)
     console.log(tiempo.getFormato24())
 }
+
+probarFecha(){
+    let fecha = new Fecha(dia, mes, año)
+    console.log(`${fecha.getAños()}`)
+}
     
 }
 let app = new Hospital
