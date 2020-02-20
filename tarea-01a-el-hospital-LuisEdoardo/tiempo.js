@@ -2,7 +2,7 @@ export default class Tiempo{
     /**
      * @param {number} hora
      * @param {number} minutos
-     * @param {number} periodo
+     * @param {string} periodo
      */
     constructor(hora, minutos, periodo){
         
