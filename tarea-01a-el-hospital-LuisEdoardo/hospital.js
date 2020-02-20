@@ -17,8 +17,9 @@ probarNombres(){
 
 }
 probarTiempo(){
-    tiempo = new Tiempo(hora, minutos, periodo)
-    console.log(tiempo.getFormato24())
+let h = new Tiempo(17,25,"AM")
+console.log(h.getFormato24())
+console.log(h.getFormato12())
 }
 
 probarFecha(){
@@ -30,3 +31,5 @@ probarFecha(){
 let app = new Hospital
 
 app.probarNombres()
+app.probarTiempo()
+app.probarFecha()

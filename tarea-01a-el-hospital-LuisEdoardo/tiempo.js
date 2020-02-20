@@ -1,19 +1,37 @@
-export default class tiempo{
+export default class Tiempo{
     /**
      * @param {number} hora
      * @param {number} minutos
      * @param {number} periodo
      */
     constructor(hora, minutos, periodo){
-        let h24 = new  Date()
+        
         this.hora = hora
         this.minutos = minutos
-        this.periodo = periodo
-        this.h24M = h24.getMinutes()
-        this.h24H = h24.getHours()
+        this.periodo = periodo.toLowerCase()
+        
     }
     getFormato24(){
-        return `${this.h24H} ${this.h24M}`
-
+        let hora = this.hora
+        if(this.periodo === "pm"){
+            hora = hora +12
+            return `${hora}:${this.minutos}`
+        }else{
+            return `${hora}:${this.minutos}`
+        }
+    }
+    getFormato12(){
+        let hora = this.hora
+        if (hora >= 12){
+            this.periodo = 'pm'
+            hora = hora - 12 
+            return `${hora}:${this.minutos}:${this.periodo}`
+            
+        }else{
+            this.periodo = 'am'
+            return `${hora}:${this.minutos}:${this.periodo}`
+        }
+        
     }
 }
+
