@@ -1,6 +1,7 @@
 import Nombres from "./nombres.js"
 import Fecha from "./fecha.js"
 import Tiempo from "./tiempo.js"
+import Paciente from "./paciente.js"
 class Hospital{
     constructor(dia,mes,año){
         this.fecha = new Date(año,mes -1,dia)
@@ -30,6 +31,13 @@ probarFecha(){
     console.log(`Han pasado ${fecha.getSemanas()} Semanas`);
     console.log(`Han pasado ${fecha.getDias()} Días`);
 }
+
+probarPaciente(){
+    let fecha = new Fecha(1, 2, 2000)
+    let nombres = new Nombres('Rodolfo Alar', 'Serrano', 'Elias')
+    let paciente = new Paciente(nombres.getNombreCompleto(), fecha.getFecha(), 3121890989)
+    console.log(`${paciente.getPerfil()}`)
+}
     
 }
 let app = new Hospital
@@ -37,3 +45,4 @@ let app = new Hospital
 app.probarNombres()
 app.probarTiempo()
 app.probarFecha()
+app.probarPaciente()
