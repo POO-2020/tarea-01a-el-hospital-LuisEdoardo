@@ -23,8 +23,12 @@ console.log(h.getFormato12())
 }
 
 probarFecha(){
-    let fecha = new Fecha(dia, mes, año)
-    console.log(`${fecha.getAños()}`)
+    let fecha = new Fecha(1,2,2000)
+    console.log(`El día fue ${fecha.getDiaFecha()}`);
+    console.log(`Han pasado ${fecha.getAños()} Años`)
+    console.log(`Han pasado ${fecha.getMeses()} Meses`);
+    console.log(`Han pasado ${fecha.getSemanas()} Semanas`);
+    console.log(`Han pasado ${fecha.getDias()} Días`);
 }
     
 }

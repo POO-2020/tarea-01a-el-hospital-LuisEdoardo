@@ -1,7 +1,7 @@
 export default class Fecha{
 /**
  * @param {number} dia
- * @param {number} mes
+ * @param {string} mes
  * @param {number} año
  */
 constructor(dia,mes,año){
@@ -36,5 +36,8 @@ getDias(){
 }
 getFecha(){
     return `${this.fecha.getDate()}/${this.meses[this.fecha.getMonth()]}/${this.fecha.getFullYear()}`
+}
+getDiaFecha(){
+    return `${this.dia[this.fecha.getDay() -1]}`
 }
 }
