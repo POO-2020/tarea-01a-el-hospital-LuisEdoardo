@@ -3,6 +3,7 @@ import Fecha from "./fecha.js"
 import Tiempo from "./tiempo.js"
 import Paciente from "./paciente.js"
 import Doctor from "./doctor.js"
+import Cita from "./cita.js"
 class Hospital{
     constructor(dia,mes,año){
         this.fecha = new Date(año,mes -1,dia)
@@ -45,7 +46,15 @@ probarDoctor(){
     let doctor = new Doctor(nombres.getNombreCompleto(), 56784321, 'Pediatra', 3126783452)
     console.log(`${doctor.getPerfil()}`)
 }
-    
+probarCita(){
+    let nombres = new Nombres('Alvaro', 'Morales', 'Leyva')
+    let doctor = new Nombres('Carolina', 'Leyva', 'Tirado')
+    let fecha = new Fecha(25, 2, 2020)
+    let tiempo = new Tiempo(9,36, 'am')
+    let cita = new Cita(`${fecha.getFecha()}, ${tiempo.getFormato12()}, ${doctor.getNombreCompleto()}, ${nombres.getNombreCompleto()}`)
+    console.log(`${cita.getPerfil()}`)
+}
+
 }
 let app = new Hospital
 
@@ -54,3 +63,4 @@ app.probarTiempo()
 app.probarFecha()
 app.probarPaciente()
 app.probarDoctor()
+app.probarCita()
