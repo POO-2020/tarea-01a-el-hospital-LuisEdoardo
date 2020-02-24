@@ -4,6 +4,7 @@ import Tiempo from "./tiempo.js"
 import Paciente from "./paciente.js"
 import Doctor from "./doctor.js"
 import Cita from "./cita.js"
+import Hospital from "./hospitales.js"
 class Hospital{
     constructor(dia,mes,año){
         this.fecha = new Date(año,mes -1,dia)
