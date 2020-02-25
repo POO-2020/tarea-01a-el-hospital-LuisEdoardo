@@ -12,7 +12,7 @@ export default class Doctor{
         this.telefono = telefono
     }
     getPerfil(){
-        return `${this.nombre}\nCedula: ${this.cedula}\nEspecialidad: ${this.especialidad}\nTelefono: ${this.telefono}`
+        return `Cedula: ${this.cedula}\nEspecialidad: ${this.especialidad}\n Nombre:${this.nombre}\n Telefono: ${this.telefono}`
     }
 
 }
