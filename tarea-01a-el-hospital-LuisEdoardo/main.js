@@ -62,6 +62,9 @@ probarCita(){
     let cita = new Cita(fecha.getFecha(),tiempo.getFormato12(),doctor.getNombreCompleto(),paciente.getPerfil())
     console.log(`${cita.getPerfil()}`)
 }
+probarHospital(){
+    
+}
 
 }
 let app = new Main
@@ -72,3 +75,4 @@ app.probarFecha()
 app.probarPaciente()
 app.probarDoctor()
 app.probarCita()
+app.ProbarHospital()
