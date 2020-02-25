@@ -48,7 +48,7 @@ probarPaciente(){
 probarDoctor(){
     console.log('<--------------------Doctor---------------------->')
     let nombreDoctor = new Nombre('José Carlos', 'Barboza', 'Mendez')
-    let doctor = new Doctor(nombreDoctor.getNombreCompleto(), 56784321, 3126783452)
+    let doctor = new Doctor(56784321, nombreDoctor.getNombreCompleto(), 'Pediatra', 3126783452)
     console.log(`${doctor.getPerfil()}`)
 }
 probarCita(){
