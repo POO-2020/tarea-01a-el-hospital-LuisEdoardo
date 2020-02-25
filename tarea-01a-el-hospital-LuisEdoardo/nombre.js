@@ -1,4 +1,4 @@
-export default class Nombres{
+export default class Nombre{
     constructor(nombre, apellidoP, apellidoM){
         this.nombre = nombre
         this.apellidoP = apellidoP

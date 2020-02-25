@@ -1,10 +1,10 @@
-import Nombres from "./nombres.js"
+import Nombre from "./nombre.js"
 import Fecha from "./fecha.js"
 import Tiempo from "./tiempo.js"
 import Paciente from "./paciente.js"
 import Doctor from "./doctor.js"
 import Cita from "./cita.js"
-import Hospital from "./hospitales.js"
+import Hospital1 from "./hospitales.js"
 class Hospital{
     constructor(dia,mes,año){
         this.fecha = new Date(año,mes -1,dia)
@@ -13,20 +13,22 @@ class Hospital{
 
     }
 probarNombres(){
-    let nombres = new Nombres('Luis Edoardo', 'Morales', 'Leyva')
-    console.log(nombres)
-    console.log(nombres.getNombreCompleto())
-    console.log(nombres.getApellidoNombre())
-    console.log(nombres.getIniciales())
+    console.log('<--------------------Nombres---------------------->')
+    let nombrePaciente = new Nombre('Luis Edoardo', 'Morales', 'Leyva')
+    console.log(nombrePaciente.getNombreCompleto())
+    console.log(nombrePaciente.getApellidoNombre())
+    console.log(nombrePaciente.getIniciales())
 
 }
 probarTiempo(){
+console.log('<--------------------Tiempo---------------------->')
 let h = new Tiempo(17,25,"AM")
 console.log(h.getFormato24())
 console.log(h.getFormato12())
 }
 
 probarFecha(){
+    console.log('<--------------------Fecha---------------------->')
     let fecha = new Fecha(1,2,2000)
     console.log(`El día fue ${fecha.getDiaFecha()}`);
     console.log(`Han pasado ${fecha.getAños()} Años`)
@@ -36,23 +38,28 @@ probarFecha(){
 }
 
 probarPaciente(){
+    console.log('<--------------------Paciente---------------------->')
     let fecha = new Fecha(1, 2, 2000)
-    let nombres = new Nombres('Rodolfo Alar', 'Serrano', 'Elias')
-    let paciente = new Paciente(nombres.getNombreCompleto(), fecha.getFecha(), 3121890989)
+    let nombrePaciente = new Nombre('Rodolfo Alar', 'Serrano', 'Elias')
+    let paciente = new Paciente(nombrePaciente.getNombreCompleto(), fecha.getFecha(), 3121890989)
     console.log(`${paciente.getPerfil()}`)
 }
 
 probarDoctor(){
-    let nombres = new Nombres('José Carlos', 'Barboza', 'Mendez')
-    let doctor = new Doctor(nombres.getNombreCompleto(), 56784321, 'Pediatra', 3126783452)
+    console.log('<--------------------Doctor---------------------->')
+    let nombreDoctor = new Nombre('José Carlos', 'Barboza', 'Mendez')
+    let doctor = new Doctor(nombreDoctor.getNombreCompleto(), 56784321, 3126783452)
     console.log(`${doctor.getPerfil()}`)
 }
 probarCita(){
-    let nombres = new Nombres('Alvaro', 'Morales', 'Leyva')
-    let doctor = new Nombres('Carolina', 'Leyva', 'Tirado')
+    console.log('<--------------------Cita---------------------->')
+    let nombrePaciente = new Nombre('Alvaro', 'Morales', 'Leyva')
+    let fechaPaciente = new Fecha(24, 3, 2001)
+    let paciente = new Paciente(nombrePaciente.getNombreCompleto(), fechaPaciente.getFecha(), 3129027892)
+    let doctor = new Nombre('Carolina', 'Leyva', 'Tirado')
     let fecha = new Fecha(25, 2, 2020)
     let tiempo = new Tiempo(9,36, 'am')
-    let cita = new Cita(`${fecha.getFecha()}, ${tiempo.getFormato12()}, ${doctor.getNombreCompleto()}, ${nombres.getNombreCompleto()}`)
+    let cita = new Cita(fecha.getFecha(),tiempo.getFormato12(),doctor.getNombreCompleto(),paciente.getPerfil())
     console.log(`${cita.getPerfil()}`)
 }
 
