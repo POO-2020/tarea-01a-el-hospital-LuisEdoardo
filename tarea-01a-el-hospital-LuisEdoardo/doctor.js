@@ -1,6 +1,6 @@
 export default class Doctor{
     /**
-     * @param {string} cedula
+     * @param {number} cedula
      * @param {string} especialidad
      * @param {string} nombre
      * @param {number} telefono

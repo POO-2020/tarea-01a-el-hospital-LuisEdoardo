@@ -6,12 +6,6 @@ import Doctor from "./doctor.js"
 import Cita from "./cita.js"
 import Hospital from "./hospital.js"
 class Main{
-    constructor(dia,mes,año){
-        this.fecha = new Date(año,mes -1,dia)
-        this.meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
-        this.dia = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes','Sabado']
-
-    }
 probarNombres(){
     console.log('<--------------------Nombres---------------------->')
     let nombrePaciente = new Nombre('Luis Edoardo', 'Morales', 'Leyva')
@@ -63,7 +57,31 @@ probarCita(){
     console.log(`${cita.getPerfil()}`)
 }
 probarHospital(){
-    
+    console.log('<--------------------Hospital---------------------->')
+    let hospital = new Hospital('Puerta de vibranium', 'Pozayork 24')
+    let doctor1 = new Doctor(92637152, 'Neurologa', new Nombre('Myriam', 'Sanchez', 'Pereira').getNombreCompleto(), 3122768967)
+    let doctor2 = new Doctor(67263867, 'Ginecologo', new Nombre('Manuel', 'Manolo', 'Morales', 'Mora').getNombreCompleto(), 3122335086)
+
+    let cita1 = new Cita(
+        new Fecha(27, 2, 2020).getFecha(),
+        new Tiempo(18, 40, 'pm').getFormato12(),
+        new Doctor(42536727, 'Cirujano', new Nombre('Ivan', 'Iglesias', 'Covarrubias').getNombreCompleto(), 3127642354).getPerfil(),
+        new Paciente(new Nombre('Jezer', 'Aguirre', 'Ponce').getNombreCompleto(), new Fecha(23, 6, 1990).getFecha(), 3126373908).getPerfil()
+    )
+
+    let cita2 = new Cita(
+        new Fecha(3, 3, 2020).getFecha(),
+        new Tiempo(11, 30, 'am').getFormato12(),
+        new Doctor(62735422, 'Urologo', new Nombre('Gustavo', 'Contreras', 'Guzman').getNombreCompleto(), 3122847536).getPerfil(),
+        new Paciente(new Nombre('Alar', 'Gonzales', 'Alcaraz').getNombreCompleto(), new Fecha(16, 8, 1995).getFecha(), 3126789356).getPerfil()
+    )
+
+    hospital.registrarDoctor(doctor1)
+    hospital.registrarDoctor(doctor2)
+    hospital.listarDoctores()
+    hospital.registrarCita(cita1)
+    hospital.registrarCita(cita2)
+    hospital.listarCitas()
 }
 
 }
@@ -75,4 +93,4 @@ app.probarFecha()
 app.probarPaciente()
 app.probarDoctor()
 app.probarCita()
-app.ProbarHospital()
+app.probarHospital()
